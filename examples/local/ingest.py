@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 from llama_index.core import (
     VectorStoreIndex,
-    SimpleDirectoryReader,
     Settings
 )
 
@@ -30,7 +29,7 @@ loader = PDFReader()
 
 documents = []
 
-for pdf_file in Path("documents").glob("*.pdf"):
+for pdf_file in Path("../../documents").glob("*.pdf"):
 
     docs = loader.load_data(file=pdf_file)
 
@@ -45,7 +44,7 @@ print(f"Total de documentos carregados: {len(documents)}")
 index = VectorStoreIndex.from_documents(documents)
 
 index.storage_context.persist(
-    persist_dir="./storage"
+    persist_dir="../../storage"
 )
 
 print("Índice persistido.")

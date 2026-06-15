@@ -26,7 +26,7 @@ Settings.embed_model = OpenAIEmbedding(
 )
 
 storage_context = StorageContext.from_defaults(
-    persist_dir="./storage"
+    persist_dir="../../storage"
 )
 
 index = load_index_from_storage(
@@ -39,7 +39,7 @@ query_engine = index.as_query_engine(
 )
 
 # pergunta = "Quando a disciplina será encerrada?"
-pergunta = "Quando a disciplina Engenharia de Software para Modelos de IA será encerrada?"
+pergunta = "Quem é o professor da disciplina?"
 
 resposta = query_engine.query(pergunta)
 
@@ -50,4 +50,4 @@ print("\nTRECHOS RECUPERADOS:")
 
 for node in resposta.source_nodes:
     print("-" * 50)
-    print(node.text[:500])
+    print(node.text[:800])
