@@ -97,3 +97,14 @@ Após a ingestão, rode o script de consulta correspondente.
 
 - Use `sair` no prompt de `examples/chroma/query.py` e `examples/pgvector/query.py` para encerrar.
 - Para alterar o modelo, edite o `model` em `Settings.llm` / `Settings.embed_model` nos scripts.
+
+### 4. Variáveis do `.env`
+```bash
+API_KEY_OPENAI=<suachave>
+
+POSTGRES_HOST=<host>
+POSTGRES_PORT=<porta>
+POSTGRES_DB=<database>
+POSTGRES_USER=<usuario>
+POSTGRES_PASSWORD=<senha>
+```
