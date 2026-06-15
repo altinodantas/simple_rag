@@ -36,10 +36,16 @@ Para configurar o ambiente, siga os passos abaixo:
    source venv/bin/activate
    ```
 
-2. Copie o arquivo de exemplo `.env.example` para `.env` e preencha suas credenciais:
-   ```bash
-   cp .env.example .env
-   ```
+2. Crie o arquivo `.env` e preencha suas credenciais, como no exemplo abaixo:
+    ```bash
+    API_KEY_OPENAI=<suachave>
+    
+    POSTGRES_HOST=<host>
+    POSTGRES_PORT=<porta>
+    POSTGRES_DB=<database>
+    POSTGRES_USER=<usuario>
+    POSTGRES_PASSWORD=<senha>
+    ```
 
 3. Instale as dependências do projeto:
    ```bash
@@ -98,13 +104,3 @@ Após a ingestão, rode o script de consulta correspondente.
 - Use `sair` no prompt de `examples/chroma/query.py` e `examples/pgvector/query.py` para encerrar.
 - Para alterar o modelo, edite o `model` em `Settings.llm` / `Settings.embed_model` nos scripts.
 
-### 4. Variáveis do `.env`
-```bash
-API_KEY_OPENAI=<suachave>
-
-POSTGRES_HOST=<host>
-POSTGRES_PORT=<porta>
-POSTGRES_DB=<database>
-POSTGRES_USER=<usuario>
-POSTGRES_PASSWORD=<senha>
-```
